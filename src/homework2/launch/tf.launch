@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="homework2" type="broadcaster_node" name="broadcaster"/>
+    <node pkg="homework2" type="listener_node" name="listener" output="screen"/>
+</launch>

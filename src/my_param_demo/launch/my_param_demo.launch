@@ -1,0 +1,20 @@
+<launch>
+    <!--param参数配置-->
+    <!-- <param name="param1" value="1"/>
+    <param name="param2" value="2"/> -->
+
+    <!--rosparam参数配置-->
+    <!-- <rosparam>
+        param3: 3
+        param4: 4
+        param5: 5
+    </rosparam> -->
+
+    <!--以上写法将参数转成YAML文件加载，注意param前面必须为空格，不能用Tab，否则YAML解析错误-->
+	<rosparam file="$(find my_param_demo)/config/my_param.yaml" command="load" />
+	
+    <!--启动一个节点rosrun my_param_demo my_param_node,该进程名称为para_process-->
+    <!-- <node pkg="my_param_demo" type="my_param_node" name="para_process" output="screen" /> -->
+    <node pkg="my_param_demo" type="pyparam.py" name="para_process" output="screen" />
+
+</launch>
